@@ -4,12 +4,13 @@ export const colors = Object.freeze({
   g: 'var(--grey)',
   l: 'var(--link)',
   buttonBg: 'var(--button-bg)',
+  da: 'var(--dark-accent)',
   w: 'var(--white)',
   b: 'var(--black)',
   gradient: 'var(--gradient)',
   overlay: 'var(--overlay)',
   wt: 'var(--white-text)',
-  bt: 'var(--blasck-text)',
+  bt: 'var(--black-text)',
 });
 
 export const fonts = Object.freeze({

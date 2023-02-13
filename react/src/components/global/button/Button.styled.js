@@ -2,45 +2,63 @@ import { marginProps, paddingProps, widthTypeOf } from 'helpers';
 import styled from 'styled-components';
 
 const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px 28px;
   border: none;
   outline: none;
 
-  padding: 16px;
+  ${p => marginProps(p)};
+  ${p => paddingProps(p)};
+  ${p => p.width && `${widthTypeOf(p.width)}; text-align: center;`};
 
-  ${p => marginProps(p)}
-  ${p => paddingProps(p)}
-  ${p => p.width && `${widthTypeOf(p.width)}; text-align: center;`}
+  border: 2px solid ${p => p.theme.colors.a};
+  border-radius: ${p => p.theme.radii.buttonRadius};
 
-  border-radius: ${p => p.theme.radii.normal};
-
-  font-family: ${p => p.theme.fonts.montserrat};
-  font-weight: ${p => p.theme.fontWeights.bold};
+  font-family: ${p => p.theme.fonts.manrope};
+  font-weight: ${p => p.theme.fontWeights.average};
   font-size: 16px;
   line-height: ${p => p.theme.lineHeights.heading};
 
-  transition: var(--transition-bg), var(--transition-color);
+  transition: var(--transition-bg), var(--transition-color), var(--transition-border-color);
 `;
 
-export const Btn = styled(Button)`
-  background-color: ${p => p.theme.colors.aBg};
+export const LigthBtn = styled(Button)`
+  background-color: ${p => p.theme.colors.w};
+  color: ${p => p.theme.colors.bt};
 
   &:hover,
   &:focus {
-    background-color: ${p => p.theme.colors.ah};
+    background-color: ${p => p.theme.colors.a};
+    color: ${p => p.theme.colors.wt};
   }
 `;
 
-export const ButtonsGhostBox = styled(Button)`
-  border: 2px solid ${p => p.theme.colors.aBg};
-
-  line-height: ${p => p.theme.lineHeights.big};
-
-  background-color: transparent;
-  color: ${p => p.theme.colors.aBg};
+export const DarkBtn = styled(Button)`
+  background-color: ${p => p.theme.colors.a};
+  color: ${p => p.theme.colors.wt};
 
   &:hover,
   &:focus {
-    background-color: ${p => p.theme.colors.aBg};
-    color: ${p => p.theme.colors.bg};
+    background-color: ${p => p.theme.colors.w};
+    color: ${p => p.theme.colors.bt};
+  }
+`;
+
+export const WhiteButtonBox = styled(Button)`
+  padding: 8px 28px;
+  line-height: ${p => p.theme.lineHeights.heading};
+
+  background-color: ${p => p.theme.colors.w};
+  color: ${p => p.theme.colors.a};
+  border: 2px solid ${p => p.theme.colors.a};
+  font-size: ${p => p.theme.fontSizes.xl};
+
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.colors.da};
+    border: 2px solid ${p => p.theme.colors.da};
   }
 `;

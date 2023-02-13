@@ -13,6 +13,7 @@ export const propTypeButton = {
   pl: paddingType,
   pr: paddingType,
   p: PropTypes.string,
+  theme: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
