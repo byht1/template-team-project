@@ -1,7 +1,7 @@
 const express = require("express");
 
 const swaggerUi = require("swagger-ui-express");
-const swagerToJSON = require("../../helpers/swagerToJSON");
+const { swaggerToJSON } = require("../../helpers");
 
 const router = express.Router();
 
@@ -122,4 +122,4 @@ const paths = [testPach, testPach2];
 const schemas = [schemasTest, schemasTest2];
 
 router.use("/", swaggerUi.serve);
-router.get("/", swaggerUi.setup(swagerToJSON(tags, paths, schemas)));
+router.get("/", swaggerUi.setup(swaggerToJSON(tags, paths, schemas)));

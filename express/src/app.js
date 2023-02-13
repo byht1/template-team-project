@@ -5,6 +5,12 @@ require("dotenv").config();
 
 global.basedir = __dirname;
 
+// FIXME: delete
+const testOne = require("./routes/api/testOne");
+// FIXME: delete
+const tetsTwo = require("./routes/api/testTwo");
+
+// Всі роути повинні бути вище swagger
 const swagger = require("./routes/swagger");
 
 const app = express();
@@ -15,6 +21,11 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
+
+// FIXME: delete
+app.use("/test-1", testOne);
+// FIXME: delete
+app.use("/test-2", tetsTwo);
 
 app.use("/docs", swagger);
 

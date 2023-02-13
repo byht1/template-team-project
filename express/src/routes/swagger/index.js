@@ -1,15 +1,16 @@
 const express = require("express");
+const { swaggerConstructor } = require("../../helpers");
 
 const swaggerUi = require("swagger-ui-express");
-const swagerToJSON = require("../../helpers/swagerToJSON");
+// const swaggerToJSON = require("../../helpers/swaggerToJSON");
 
 const router = express.Router();
 
-const tags = [];
-const paths = [];
-const schemas = [];
+// const tags = [];
+// const paths = [];
+// const schemas = [];
 
 router.use("/", swaggerUi.serve);
-router.get("/", swaggerUi.setup(swagerToJSON(tags, paths, schemas)));
+router.get("/", swaggerUi.setup(swaggerConstructor.swaggerBuild()));
 
 module.exports = router;
