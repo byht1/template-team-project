@@ -1,7 +1,7 @@
 {
-  "name": "patissier-client",
+  "name": "react-team-project",
   "version": "0.1.0",
-  "homepage": "https://byht1.github.io/patissier-client/",
+  "homepage": "https://byht1.github.io/react-team-project/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",

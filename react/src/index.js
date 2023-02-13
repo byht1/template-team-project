@@ -15,7 +15,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/patissier-client">
+        <BrowserRouter basename="/react-team-project">
           <ThemeProvider theme={theme}>
             <App />
           </ThemeProvider>

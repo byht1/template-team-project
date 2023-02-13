@@ -25,7 +25,7 @@ const Button = styled.button`
   transition: var(--transition-bg), var(--transition-color), var(--transition-border-color);
 `;
 
-export const LigthBtn = styled(Button)`
+export const LightBtn = styled(Button)`
   background-color: ${p => p.theme.colors.w};
   color: ${p => p.theme.colors.bt};
 
@@ -54,7 +54,6 @@ export const WhiteButtonBox = styled(Button)`
   background-color: ${p => p.theme.colors.w};
   color: ${p => p.theme.colors.a};
   border: 2px solid ${p => p.theme.colors.a};
-  font-size: ${p => p.theme.fontSizes.xl};
 
   &:hover,
   &:focus {

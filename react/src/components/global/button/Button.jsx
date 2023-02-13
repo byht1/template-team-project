@@ -1,16 +1,21 @@
 import React from 'react';
-import { LigthBtn, DarkBtn } from './Button.styled';
+import { LightBtn, DarkBtn } from './Button.styled';
 import { propTypeButton } from './type';
 
-export const Button = ({ children, theme, ...props }) => {
+export const Button = ({ children, theme, type = 'button', fn, ...props }) => {
   return (
     <>
-      {theme === 'dark' 
-      ? <DarkBtn {...props}>{children}</DarkBtn> 
-      : <LigthBtn {...props}>{children}</LigthBtn>}
+      {theme === 'dark' ? (
+        <DarkBtn onClick={fn} type={type} {...props}>
+          {children}
+        </DarkBtn>
+      ) : (
+        <LightBtn onClick={fn} type={type} {...props}>
+          {children}
+        </LightBtn>
+      )}
     </>
-  )
-
+  );
 };
 
 Button.propTypes = propTypeButton;
